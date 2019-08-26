@@ -7,4 +7,5 @@ class Book < ApplicationRecord
   validates :publishing_year, presence: true
   validates :description, presence: true
   validates :user_id, presence: true
+  validates :photo, presence: true
 end
