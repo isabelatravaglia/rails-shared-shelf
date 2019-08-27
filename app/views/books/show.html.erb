@@ -1,6 +1,15 @@
-<p><strong><%=@book.name%></strong></p>
-<p>Author: <%=@book.author%></p>
-<p>Year: <%=@book.publishing_year%></p>
-<p>Language: <%=@book.language%></p>
-<p>number of pages: <%=@book.number_of_pages%></p>
-<p>Description: <%=@book.description%></p>
+
+<div class="card-product">
+  <div class="content-backgroud">
+    <img src="https://covers.audiobooks.com/images/covers/full/9781481558754.jpg" />
+    <div class="card-product-infos">
+      <h2><%=@book.name%></h2>
+        <h3><%=@book.author%></h3>
+        <p>Publishing year: <%=@book.publishing_year%></p>
+        <p>Language: <%=@book.language%></p>
+        <p>Pages: <%=@book.number_of_pages%></p>
+        <p>Sinopse: <%=@book.description%></p>
+      </div>
+    </div>
+ <!--  <h2 class="card-trip-pricing">5 credits</h2> -->
+</div>
