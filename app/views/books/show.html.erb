@@ -4,3 +4,8 @@
 <p>Language: <%=@book.language%></p>
 <p>number of pages: <%=@book.number_of_pages%></p>
 <p>Description: <%=@book.description%></p>
+
+<div class="card mb-4 shadow-sm card-body">
+  <%= link_to "Borrow this book!", book_transactions_path(@book), method: :post %>
+
+</div>
