@@ -6,7 +6,6 @@
   width: 900px;
   height: 600px;
   font-family: sans-serif;
-  text-shadow: 2px 3px rgba(0, 0, 0, 0.6);
   padding: 50px;
   align-items: center;
   justify-content: center;
@@ -16,14 +15,26 @@
 }
 
 .d-block {
-
   padding: 50px;
-  width: 900px;
   height: 600px;
   object-fit: cover;
 }
 
+.carousel-caption {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  width: 700px;
+}
 
+.carousel-indicators{
 
+  position: absolute;
+  bottom: 30px;
 
+}
 
+#carouselExampleCaptions {
+  position: relative;
+}

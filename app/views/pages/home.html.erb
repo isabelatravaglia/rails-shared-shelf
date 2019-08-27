@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
   <div class="container">
     <h1>Welcome to the Shared Shelf</h1>
-    <%= link_to 'Borrow books you love', books_path %>
+    <h3>Borrow books you love</h3>
     <!-- <h3>Find books you love</h3> -->
   </div>
 </div>
@@ -14,24 +14,24 @@
     </ol>
     <div class="carousel-inner">
       <%= link_to books_path, :action => 'go' do %>
-        <div><div class="carousel-item active">
+        <div class="carousel-item active ">
               <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1453&q=80" class="d-block w-100" alt="shelf">
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption d-none d-md-block carousel-text-background">
                 <h4>Browse the Shelf</h4>
                 <p>Find all books you can borrow</p>
-              </div></div>
+              </div>
       <% end %>
       </div>
       <div class="carousel-item">
         <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" class="d-block w-100" alt="books">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption d-none d-md-block carousel-text-background">
           <h4>Browse by genre</h4>
           <p>Find the genres you love</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="https://images.unsplash.com/photo-1474366521946-c3d4b507abf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="table">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption d-none d-md-block carousel-text-background">
           <h4>Read rviews</h4>
           <p>See other readers opinion</p>
         </div>
