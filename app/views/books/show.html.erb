@@ -1,4 +1,5 @@
 
+
 <div class="card-product">
   <div class="content-backgroud">
     <img src="https://covers.audiobooks.com/images/covers/full/9781481558754.jpg" />
@@ -11,5 +12,8 @@
         <p>Sinopse: <%=@book.description%></p>
       </div>
     </div>
- <!--  <h2 class="card-trip-pricing">5 credits</h2> -->
+
+<div class="card mb-4 shadow-sm card-body">
+  <%= link_to "Borrow this book!", book_transactions_path(@book), method: :post %>
+
 </div>
