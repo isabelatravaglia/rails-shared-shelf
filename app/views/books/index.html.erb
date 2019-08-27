@@ -1,9 +1,15 @@
+<h2>Browse the Shelf</h2>
+
 <%@books.each do |book|  %>
 
-<ul>
-  <li>
-    Book Name: <%=book.name%>, author: <%=book.author%>
-  </li>
-</ul>
+
+    <div class="card-product">
+  <img src="https://covers.audiobooks.com/images/covers/full/9781481558754.jpg" />
+  <div class="card-product-infos">
+    <h2><%=book.name%>, <%=book.author%></h2>
+    <p><%=book.description%></p>
+  </div>
+</div>
+
 <%end%>
 
