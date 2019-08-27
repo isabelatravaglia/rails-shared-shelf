@@ -5,5 +5,4 @@ Rails.application.routes.draw do
     resources :transactions, only: [:new, :create, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/books/transactions/checkout', to:'transactions#after_checkout', as: :after_checkout
 end
