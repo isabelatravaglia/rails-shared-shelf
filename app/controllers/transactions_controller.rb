@@ -9,8 +9,8 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params) # user_id, book_id
     @transaction.user = current_user
     @transaction.book = @book
+    @transaction.return_date = @transaction.borrow_date + 10
     @transaction.save
-    raise
     render :show
   end
 
