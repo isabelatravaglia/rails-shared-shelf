@@ -1,20 +1,19 @@
-
 <div class="show-card">
   <div class="content-backgroud">
     <img src="https://covers.audiobooks.com/images/covers/full/9781481558754.jpg" />
     <div class="show-card-infos">
       <h2><%=@book.name%></h2>
-        <h3><%=@book.author%></h3>
-        <p>Publishing year: <%=@book.publishing_year%></p>
-        <p>Language: <%=@book.language%></p>
-        <p>Pages: <%=@book.number_of_pages%></p>
-        <p>Sinopse: <%=@book.description%></p>
-      </div>
+      <h3><%=@book.author%></h3>
+      <p>Publishing year: <%=@book.publishing_year%></p>
+      <p>Language: <%=@book.language%></p>
+      <p>Pages: <%=@book.number_of_pages%></p>
+      <p>Sinopse: <%=@book.description%></p>
+<br>
+      <%= link_to "Borrow this book!", book_transactions_path(@book), method: :post, class: 'btn btn-dark rounded-pill' %>
+
+
     </div>
- <!--  <h2 class="card-trip-pricing">5 credits</h2> -->
+
+  </div>
 </div>
 
-<div class="card mb-4 shadow-sm card-body">
-  <%= link_to "Borrow this book!", book_transactions_path(@book), method: :post %>
-
-</div>
