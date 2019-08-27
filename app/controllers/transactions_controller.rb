@@ -6,8 +6,10 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @transaction = Transaction.new(book_id: params[:book_id].to_i) # user_id, book_id
+    @transaction = Transaction.new(transaction_params) # user_id, book_id
     @transaction.user = current_user
+    @transaction.book = @book
+    @transaction.return_date = @transaction.borrow_date + 10
     @transaction.save
     render :show
   end
@@ -18,6 +20,10 @@ class TransactionsController < ApplicationController
   end
 
   private
+
+  def transaction_params
+    params.require(:transaction).permit(:borrow_date, :return_date, :book_id)
+  end
 
   def fetch_book
     @book = Book.find(params[:book_id])

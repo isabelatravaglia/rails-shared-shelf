@@ -1,0 +1,14 @@
+<%= simple_form_for [@book, @transaction] do |f| %>
+  <div class="form-inputs">
+    <%= f.input :borrow_date %>
+    <%#= f.input :return_date, as: :date, selected: Date.today + 10, as: :hidden%>
+    <%#= f.input :book_id, as: :hidden, value: @book.id %>
+    <%#= f.input :user_id, as: :hidden, value: current_user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Borrow this book", class: 'btn btn-dark rounded-pill' %>
+  </div>
+  <p>You can keep this book during 10 days, starting from the borrowing date!</p>
+<% end %>
+
