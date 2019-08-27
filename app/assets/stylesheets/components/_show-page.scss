@@ -1,4 +1,4 @@
-.card-product {
+.show-card {
   overflow: hidden;
   height: 700px;
   background: white;
@@ -8,19 +8,19 @@
   padding: 10%;
 }
 
-.card-product img {
+.show-card img {
   height: 500px;
   width: 440px;
   // object-fit: cover;
 }
 
-.card-product h2 {
+.show-card h2 {
   font-size: 25px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.show-card p {
   font-size: 20px;
   line-height: 1.4;
   opacity: .7;
@@ -28,7 +28,7 @@
   margin-top: 8px;
 }
 
-.card-product-infos {
+.show-card-infos {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 16px;
