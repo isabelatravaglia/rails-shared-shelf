@@ -1,12 +1,13 @@
 .show-card {
   overflow: hidden;
   height: 700px;
-  background: white;
+  background: #cccccc;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   padding: 10%;
   position: relative;
+  margin: 0 auto;
 }
 
 .show-card img {
@@ -47,5 +48,5 @@
 .button-back {
   position: absolute;
   bottom: 50px;
-  left: 127px;
+  left: 144px;
 }
