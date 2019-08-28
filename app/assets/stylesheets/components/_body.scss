@@ -5,3 +5,13 @@ body {
   font-family: 'Roboto', sans-serif;
 
 }
+
+.homepage-content {
+  min-height: calc(100vh - 76px);
+}
+
+
+.site-content {
+  margin-top: 100px;
+  min-height:calc(100vh - 60px);
+}

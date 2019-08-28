@@ -14,10 +14,14 @@
     <%= render 'shared/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <div class="site-content" style="margin-top: 100px; margin-bottom: 30px;">
+    <% if params[:controller] == "pages" %>
+    <div class="homepage-content">
+    <% else %>
+    <div class="site-content">
+    <% end %>
       <%= yield %>
     </div>
+
 
     <%= render 'shared/footer' %>
 
