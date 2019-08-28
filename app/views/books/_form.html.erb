@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-4">
   <%= simple_form_for @book do |f| %>
     <%#= f.error_notification %>
 
@@ -27,4 +27,6 @@
       <%= f.button :submit, "Create this book", class: 'btn btn-dark rounded-pill', data: {confirm: "Create this book?"} %>
     </div>
   <% end %>
+  <br>
+  <%= link_to "Back to Books", books_path, class: 'btn btn-outline-secondary rounded-pill' %>
 </div>
