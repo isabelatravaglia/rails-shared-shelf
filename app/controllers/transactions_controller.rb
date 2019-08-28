@@ -10,8 +10,12 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
     @transaction.book = @book
     @transaction.return_date = @transaction.borrow_date + 10
-    @transaction.save
-    render :show
+    # raise
+    if @transaction.save
+      render :show
+    else
+      render 'books/show'
+    end
   end
 
   def show

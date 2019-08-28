@@ -5,15 +5,15 @@ class Transaction < ApplicationRecord
   validates :book_id, presence: true
   validates :borrow_date, presence: true
   validates :return_date, presence: true
-  validate :return_date_after_borrow_date
+  validate :borrow_date_starting_today
 
   private
 
-  def return_date_after_borrow_date
+  def borrow_date_starting_today
     return if return_date.blank? || borrow_date.blank?
 
-      if return_date < borrow_date
-        errors.add(:return_date, "must be after the start date")
+      if borrow_date < Date.today
+        errors.add(:borrow_date, "cannot be in the past.")
       end
   end
 end
