@@ -20,7 +20,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Borrow this book", class: 'btn btn-dark rounded-pill' %>
+    <%= f.button :submit, "Borrow this book", class: 'btn btn-dark rounded-pill', data: {confirm: "Confirm book borrowing?"} %>
   </div>
   <p>You can keep this book during 10 days, starting from the borrowing date!</p>
 <% end %>
