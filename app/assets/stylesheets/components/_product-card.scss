@@ -18,6 +18,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: #4d4d4d;
 }
 
 .card-product p {
@@ -26,6 +27,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: #4d4d4d;
 }
 
 .card-product .card-product-infos {
@@ -33,5 +35,10 @@
 }
 
 .index-page {
-margin: 0 12%;
+margin: 100px 12%;
+color: #4d4d4d;
+}
+
+.index-page h2 {
+  margin-left: 15px;
 }
