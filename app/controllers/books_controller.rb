@@ -3,18 +3,12 @@ class BooksController < ApplicationController
   before_action :fetch_book, only:[:show, :edit, :update, :destroy]
 
   def index
-
     if params[:query].present?
-      @results = Book.search_by_book_feature(params[:query])
+      @results = policy_scope(Book).order(:created_at).search_by_book_feature(params[:query])
     else
-      @results = Book.all
+      @results = policy_scope(Book).order(:created_at)
     end
-    # @books = Book.all
-
-   @books = policy_scope(Book).order(:created_at)
-
   end
-
 
   def show
     @book = Book.find(params[:id])
@@ -59,6 +53,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:name, :description, :author, :photo, :number_of_pages, :language, :publishing_year)
+    params.require(:book).permit(:name, :description, :author, :photo, :number_of_pages, :language, :edition, :genre)
   end
 end
