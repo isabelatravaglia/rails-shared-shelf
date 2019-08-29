@@ -11,6 +11,8 @@
       <div class="card-product-infos">
         <h2><%=book.name%>, <%=book.author%></h2>
         <p><%=book.description%></p>
+        <br>
+        <%= link_to "Delete", book_path(book), method: :delete, class: 'btn btn-outline-secondary rounded-pill' %>
       </div>
     </div>
     <% end %>
