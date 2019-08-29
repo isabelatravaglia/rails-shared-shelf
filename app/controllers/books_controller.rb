@@ -3,7 +3,8 @@ class BooksController < ApplicationController
   before_action :fetch_book, only:[:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.all
+    # @books = Book.all
+    @books = policy_scope(Book).order(:created_at)
   end
 
   def show
@@ -13,10 +14,12 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    authorize @book
   end
 
   def create
     @book = Book.new(book_params)
+    authorize @book
     @book.user = current_user
     if @book.save
       redirect_to books_path
@@ -42,6 +45,7 @@ class BooksController < ApplicationController
 
   def fetch_book
     @book = Book.find(params[:id])
+    authorize @book
   end
 
   def book_params
