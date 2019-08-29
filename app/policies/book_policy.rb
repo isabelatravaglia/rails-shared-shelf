@@ -30,6 +30,6 @@ class BookPolicy < ApplicationPolicy
   def user_is_owner_or_admin?
     # 1. user - the user that is logged in
     # 2. record - the record you a tryin to access/change - in this case Restaurant instance
-    record.user == user || user.admin?
+    record.user == user # || user.admin?
   end
 end
