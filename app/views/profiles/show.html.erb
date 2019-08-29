@@ -1,38 +1,25 @@
 
 
 <div class="profile">
-      <h3>Hello Your Updated Profile</h3>
-      <h3>Hello <%=@profile.user.email %></h3>
-      <h3> <%=@profile.first_name %></h3>
-      <h3> <%=@profile.last_name %></h3>
-      <h3> <%=@profile.address %></h3>
-      <h3> <%=@profile.phone_number %></h3>
-      <h3> <%=@profile.photo %></h3>
-  </div>
-  <div class="vie-items">
-    link_to <p>Go to your dashboard</p>
-  </div>
+      <h2>Hello, <%=@profile.first_name %>!</h2>
+      <h3> <%#=@profile.photo %></h3>
+</div>
+<h4>Your borrowing history:</h4>
+<ul>
+  <% @user.transactions.each do |transaction| %>
+  <li>Book: <%= transaction.book.name %>, Borrowing Date: <%= transaction.borrow_date %>, Return Date: <%= transaction.return_date %>.
+  </li>
+  <% end %>
+</ul>
 
-<div class="container d-flex justify-content-around">
-  <div class="profile-book d-flex border border-secondary">
-    <img src="https://richmedia.channeladvisor.com/ImageDelivery/imageService?profileId=12026540&id=708096&recipeId=728" />
-    <div class="card-product-infos">
-      <h2>Your Books</h2>
-      <p>Cick here to see all <strong>Your Books</strong></p>
-    </div>
-  </div>
-    <div class="profile-book d-flex mh-300 border border-secondary">
-      <img src="https://richmedia.channeladvisor.com/ImageDelivery/imageService?profileId=12026540&id=708096&recipeId=728"/>
-      <div class="card-product-infos">
-        <h2>Borrowed Books</h2>
-        <p>Cick here to see all your <strong>Borrowed Books </strong></p>
-      </div>
-    </div>
-    <div class="profile-book d-flex border border-secondary">
-      <img src="https://richmedia.channeladvisor.com/ImageDelivery/imageService?profileId=12026540&id=708096&recipeId=728" />
-      <div class="card-product-infos">
-        <h2>Lended Books</h2>
-        <p>Cick here to see all <strong>Your Lended Books</strong></p>
-      </div>
-    </div>
-  </div>
+<h4>Your lending history:</h4>
+<p>Please auhtorize or decline your pending requests.</p>
+<ul>
+  <% @user.books.each do |book| %>
+    <% book.transactions.each do |book_transactions| %>
+      <li> Book: <%= book_transactions.book.name %>, Requested Borrow Date: <%= book_transactions.borrow_date %>, Requested Return Date: <%= book_transactions.return_date %>.</li>
+    <% end %>
+  <% end %>
+</ul>
+
+
