@@ -1,16 +1,5 @@
 class ProfilesController < ApplicationController
 
-  def index
-    @flats = Flat.geocoded #returns flats with coordinates
-
-    @markers = @flats.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
-  end
-
   def show
     # @user = current_user
     # @profile = Profile.find(params[@user])
