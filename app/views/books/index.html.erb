@@ -1,6 +1,5 @@
 <div class="index-page">
 
-
   <%= form_tag books_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
@@ -26,13 +25,18 @@
             <h2><%=result.name%>, <%=result.author%></h2>
             <p><%=result.description%></p>
             <p><%=result.language%></p>
-            <p><%=result.publishing_year%></p>
+            <p><%=result.publishing_year%></p>                     
+            <% if policy(result).destroy? %>
+               <%= link_to "Delete", book_path(result), method: :delete, class: 'btn btn-outline-secondary rounded-pill' %>
+            <% end %>
+            <% if policy(result).edit? %>
+              <%= link_to "Edit", edit_book_path(result), class: 'btn btn-outline-secondary rounded-pill' %>
+            <% end %>          
           </div>
         </div>
         <% end %>
-      <%end%>
+      <% end %>      
     <% end %>
-
 </div>
 
 
