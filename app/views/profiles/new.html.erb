@@ -1,4 +1,5 @@
-<%= simple_form_for [@profile] do |f| %>
+<div class="new-profile form-control col-sm-6">
+<%= simple_form_for @profile do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :address %>
@@ -6,3 +7,4 @@
   <%= f.input :photo %>
   <%= f.submit "create/update", class: "btn btn-primary" %>
 <% end %>
+</div>
