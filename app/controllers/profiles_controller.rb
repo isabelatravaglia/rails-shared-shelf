@@ -4,17 +4,19 @@ class ProfilesController < ApplicationController
     # @user = current_user
     # @profile = Profile.find(params[@user])
     @profile = current_user.profile
+    authorize @profile
   end
 
   def new
     @user = current_user
     @profile = Profile.new
     # @profile = current_user.profile.new
-
+    authorize @profile
   end
 
   def create
     @profile = Profile.new(profile_params)
+    authorize @profile
     @profile.user = current_user
     if @profile.save
       redirect_to profile_path(@profile)
@@ -30,6 +32,7 @@ class ProfilesController < ApplicationController
   def update
 
   end
+
   private
 
   def profile_params
