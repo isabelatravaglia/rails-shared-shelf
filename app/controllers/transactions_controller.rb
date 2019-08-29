@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       render :show
     else
-      render 'books/show'
+      redirect_to book_path(@book)
     end
   end
 
