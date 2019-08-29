@@ -6,6 +6,13 @@
   display: flex;
   align-items: center;
   margin: 15px 15px 15px;
+  &:hover {
+    background: #b3b3b3;
+    img {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+    }
+  }
 }
 
 .card-product img {
@@ -15,14 +22,14 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
   color: #4d4d4d;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -32,7 +39,10 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding-left: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
 }
 
 .index-page {
@@ -44,3 +54,15 @@ margin-bottom: 30px;
 .index-page h2 {
   margin-left: 15px;
 }
+
+.btn-add {
+
+  margin-right: 15px;
+}
+
+.index-page h4 {
+  margin-left: 15px;
+  padding-top: 15px;
+}
+
+

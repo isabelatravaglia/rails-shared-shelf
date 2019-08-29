@@ -1,8 +1,8 @@
 
 <div class="jumbotron text-center">
-  <h3>Thank you for borrowing the book <%= @book.name %>, <%=@transaction.user.email %>!</h3>
+  <h3>Thank you for borrowing the book <strong><em><%= @book.name %></em></strong>, <%=@transaction.user.email %>!</h3>
   <h3>Enjoy your reading!</h3>
-  <p>Please make sure you return the book by <%= @transaction.return_date %>.</p>
+  <h4>Please make sure you return the book by <%= @transaction.return_date %>.</h4>
   <p class="lead">Check your email for additional details.</p>
   <hr class="my-4">
   <p>

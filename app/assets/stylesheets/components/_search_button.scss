@@ -1,0 +1,14 @@
+
+.btn-search {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 4px;
+    margin-left:0;
+    height: calc(1.5em + 0.75rem + 1px);
+    &:hover {
+    background: #b3b3b3;
+  }
+}
