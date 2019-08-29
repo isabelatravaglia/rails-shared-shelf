@@ -12,7 +12,23 @@ body {
 
 
 .site-content {
-  margin-top: 200px;
+  margin-top: 150px;
   min-height:calc(100vh - 60px);
   font-family: 'Roboto', sans-serif;
+  h2{
+    color: #4d4d4d
+  }
+  p {
+    color: #4d4d4d
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.form-inputs {
+
+  font-family: 'Roboto', sans-serif;
+  color: #4d4d4d;
+
 }
