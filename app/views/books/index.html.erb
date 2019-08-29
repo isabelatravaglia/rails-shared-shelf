@@ -1,6 +1,8 @@
 <div class="index-page">
   <h2>Browse the Shelf</h2>
 
+  <%= link_to "Add a book", new_book_path, class: 'btn btn-outline-secondary rounded-pill' %>
+
   <%@books.each do |book|  %>
 
   <%= link_to book_path(book), :action => 'go' do %>
