@@ -96,6 +96,10 @@ book_15 = Book.new(name: Faker::Book.title, author: Faker::Book.author, number_o
 book_15.remote_photo_url = url_15
 book_15.save
 
+puts "creating a profile..."
+vicente = Profile.create!(first_name: "vicente", last_name: "dauce", phone_number: "825369276", address: "maputo", photo: "something", user: User.first)
+
+
 puts "Done!"
 
 
