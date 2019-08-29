@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
   def show
     # @user = current_user
     # @profile = Profile.find(params[@user])
+    @user = current_user
     @profile = current_user.profile
     authorize @profile
   end

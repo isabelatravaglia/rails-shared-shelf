@@ -1,5 +1,9 @@
 class TransactionsController < ApplicationController
-  before_action :fetch_book
+  before_action :fetch_book, except: [:index]
+
+  def index
+    @transactions = Transaction.all
+  end
 
   def new
     @transaction = Transaction.new
@@ -16,7 +20,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       render :show
     else
-      redirect_to book_path(@book)
+      render 'books/show'
     end
   end
 
@@ -34,5 +38,9 @@ class TransactionsController < ApplicationController
 
   def fetch_book
     @book = Book.find(params[:book_id])
+  end
+
+  def fetch_profile
+    @user = User.find(params[:profile_id])
   end
 end
