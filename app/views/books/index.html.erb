@@ -1,41 +1,42 @@
 <div class="index-page">
+  <div class="d-flex justify-content-between">
+    <%= render 'shared/search' %>
 
-  <%= form_tag books_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a book"
-     %>
-     <%= submit_tag "Search", class: "btn btn-dark rounded-pill" %>
-  <% end %>
+      <div class="btn-add">
+        <%= link_to "Add a book", new_book_path, class: 'btn btn-outline-secondary rounded-pill' %>
+      </div>
+  </div>
 
-  <%= link_to "Add a book", new_book_path, class: 'btn btn-outline-secondary rounded-pill' %>
 
-  <h2>Browse the Shelf</h2>
+  <h4>Browse the Shelf</h4>
 
 
   <% if @results.empty? %>
     <%= "Sorry, this book doesn't exist in this plataform." %>
   <% else %>
+    <div class="row">
     <% @results.each do |result|  %>
-      <%= link_to book_path(result), method: :get, :action => 'go' do %>
-        <div class="card-product">
-          <img src= "<%= result.photo %>" />
-          <div class="card-product-infos">
-            <h2><%=result.name%>, <%=result.author%></h2>
-            <p><%=result.description%></p>
-            <p><%=result.language%></p>
-            <p><%=result.publishing_year%></p>                     
-            <% if policy(result).destroy? %>
-               <%= link_to "Delete", book_path(result), method: :delete, class: 'btn btn-outline-secondary rounded-pill' %>
-            <% end %>
-            <% if policy(result).edit? %>
-              <%= link_to "Edit", edit_book_path(result), class: 'btn btn-outline-secondary rounded-pill' %>
-            <% end %>          
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= link_to book_path(result), method: :get, :action => 'go' do %>
+          <div class="card-product">
+            <img src= "<%= result.photo %>" />
+            <div class="card-product-infos">
+              <h2><%=result.name%>, <%=result.author%></h2>
+              <p><%=result.description%></p>
+              <p><%=result.language%></p>
+              <p><%=result.publishing_year%></p>
+              <% if policy(result).destroy? %>
+                 <%= link_to "Delete", book_path(result), method: :delete, class: 'btn btn-outline-secondary rounded-pill' %>
+              <% end %>
+              <% if policy(result).edit? %>
+                <%= link_to "Edit", edit_book_path(result), class: 'btn btn-outline-secondary rounded-pill' %>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <% end %>
-      <% end %>      
+          <% end %>
+      </div>
+      <% end %>
+    </div>
     <% end %>
 </div>
 

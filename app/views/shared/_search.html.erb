@@ -1,22 +1,12 @@
-<%= form_tag books_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a book"
-     %>
-     <%= submit_tag "Search", class: "btn btn-dark rounded-pill" %>
-  <% end %>
 
-   <% @results.each do |result|  %>
-      <%= link_to book_path(result), method: :get, :action => 'go' do %>
-        <div class="card-product">
-          <img src= "<%= result.photo %>" />
-          <div class="card-product-infos">
-            <h2><%=result.name%>, <%=result.author%></h2>
-            <p><%=result.description%></p>
-            <p><%=result.language%></p>
-            <p><%=result.publishing_year%></p>
-          </div>
-        </div>
-      <% end %>
+    <div class="search-form  form-inline">
+    <%= form_tag books_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a book"
+       %>
+
+        <%= submit_tag "Search", class: "btn-search" %>
     <% end %>
+  </div>
