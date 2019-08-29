@@ -1,13 +1,15 @@
-   <% @results.each do |result|  %>
-      <%= link_to book_path(result), method: :get, :action => 'go' do %>
-        <div class="card-product">
-          <img src= "<%= result.photo %>" />
-          <div class="card-product-infos">
-            <h2><%=result.name%>, <%=result.author%></h2>
-            <p><%=result.description%></p>
-            <p><%=result.language%></p>
-            <p><%=result.publishing_year%></p>
-          </div>
+<% if not @results.nil? %>
+  <% @results.each do |result|  %>
+    <%= link_to book_path(result), method: :get, :action => 'go' do %>
+      <div class="card-product">
+        <img src= "<%= result.photo %>" />
+        <div class="card-product-infos">
+          <h2><%=result.name%>, <%=result.author%></h2>
+          <p><%=result.description%></p>
+          <p><%=result.language%></p>
+          <p><%=result.publishing_year%></p>
         </div>
-      <% end %>
+      </div>
     <% end %>
+  <% end %>
+<% end %>
