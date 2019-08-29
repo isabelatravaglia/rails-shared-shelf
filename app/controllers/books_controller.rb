@@ -3,12 +3,19 @@ class BooksController < ApplicationController
   before_action :fetch_book, only:[:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.all
+    if params[:query].present?
+      @results = Book.search_by_book_feature(params[:query])
+    else
+      @results = Book.all
+    end
+    # @books = Book.all
   end
+
 
   def show
     @book = Book.find(params[:id])
     @transaction = Transaction.new
+    @results = Book.search_by_book_feature(params[:query])
   end
 
   def new
