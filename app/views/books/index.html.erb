@@ -26,6 +26,7 @@
             <p><%=result.description%></p>
             <p><%=result.language%></p>
             <p><%=result.edition%></p>
+             <p><%=result.genre%></p>
             <% if policy(result).destroy? %>
                <%= link_to "Delete", book_path(result), method: :delete, class: 'btn btn-outline-secondary rounded-pill' %>
             <% end %>
