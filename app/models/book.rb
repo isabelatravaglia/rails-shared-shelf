@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
+  has_many :transactions, dependent: :destroy
   validates :name, presence: true
   validates :author, presence: true
   validates :language, presence: true
@@ -9,4 +10,12 @@ class Book < ApplicationRecord
   validates :user_id, presence: true
   validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
+
+  include PgSearch::Model
+  pg_search_scope :search_by_book_feature,
+    against: [ :name, :author, :language, :description, :publishing_year ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end

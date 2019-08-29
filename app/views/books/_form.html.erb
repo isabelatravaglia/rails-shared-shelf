@@ -1,32 +1,38 @@
 <div class="container mb-4">
-  <%= simple_form_for @book do |f| %>
-    <%#= f.error_notification %>
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-lg-6">
+      <h2>Add a book</h2>
+      <br>
+      <%= simple_form_for @book do |f| %>
+        <%#= f.error_notification %>
 
-    <% if @book.errors.any? %>
-     <div class="alert alert-danger">
-        <h3>Please fix these problems:</h3>
-        <ul>
-        <% @book.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
+        <% if @book.errors.any? %>
+         <div class="alert alert-danger">
+            <h3>Please fix these problems:</h3>
+            <ul>
+            <% @book.errors.full_messages.each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+            </ul>
+          </div>
         <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-    <div class="form-inputs">
-      <%= f.input :name, :error => false %>
-      <%= f.input :author, :error => false %>
-      <%= f.input :number_of_pages, :error => false %>
-      <%= f.input :description, :error => false %>
-      <%= f.input :language, :error => false %>
-      <%= f.input :publishing_year, :error => false %>
-      <%= f.input :photo, :error => false %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :name, :error => false %>
+          <%= f.input :author, :error => false %>
+          <%= f.input :number_of_pages, :error => false %>
+          <%= f.input :description, :error => false %>
+          <%= f.input :language, :error => false %>
+          <%= f.input :publishing_year, :error => false %>
+          <%= f.input :photo, :error => false %>
+        </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Create this book", class: 'btn btn-dark rounded-pill', data: {confirm: "Create this book?"} %>
+        <div class="form-actions">
+          <%= f.button :submit, "Create this book", class: 'btn btn-dark rounded-pill', data: {confirm: "Create this book?"} %>
+        </div>
+      <% end %>
+      <br>
+      <%= link_to "Back to Books", books_path, class: 'btn btn-outline-secondary rounded-pill' %>
     </div>
-  <% end %>
-  <br>
-  <%= link_to "Back to Books", books_path, class: 'btn btn-outline-secondary rounded-pill' %>
+  </div>
 </div>

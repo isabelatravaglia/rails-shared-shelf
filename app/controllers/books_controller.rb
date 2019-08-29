@@ -3,20 +3,27 @@ class BooksController < ApplicationController
   before_action :fetch_book, only:[:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.all
+    if params[:query].present?
+      @results = policy_scope(Book).order(:created_at).search_by_book_feature(params[:query])
+    else
+      @results = policy_scope(Book).order(:created_at)
+    end
   end
 
   def show
     @book = Book.find(params[:id])
     @transaction = Transaction.new
+    @results = Book.search_by_book_feature(params[:query])
   end
 
   def new
     @book = Book.new
+    authorize @book
   end
 
   def create
     @book = Book.new(book_params)
+    authorize @book
     @book.user = current_user
     if @book.save
       redirect_to books_path
@@ -30,7 +37,7 @@ class BooksController < ApplicationController
 
   def update
     @book.update(book_params)
-    redirect_to @book
+    redirect_to books_path
   end
 
   def destroy
@@ -42,6 +49,7 @@ class BooksController < ApplicationController
 
   def fetch_book
     @book = Book.find(params[:id])
+    authorize @book
   end
 
   def book_params

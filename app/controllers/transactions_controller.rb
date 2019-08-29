@@ -3,10 +3,12 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
+    authorize @transaction
   end
 
   def create
     @transaction = Transaction.new(transaction_params) # user_id, book_id
+    authorize @transaction
     @transaction.user = current_user
     @transaction.book = @book
     @transaction.return_date = @transaction.borrow_date + 10
@@ -14,12 +16,13 @@ class TransactionsController < ApplicationController
     if @transaction.save
       render :show
     else
-      render 'books/show'
+      redirect_to book_path(@book)
     end
   end
 
   def show
     @transaction = Transaction.find(params[:transaction_id])
+    authorize @transaction
     @book = @transaction.book
   end
 
