@@ -1,11 +1,15 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
 
   <div class="container">
-    <h1>Welcome to the Shared Shelf</h1>
-    <h3>Borrow books you love</h3>
+    <div class="tag-line">
+      <h1>Welcome to the Shared Shelf</h1>
+      <h3>Borrow books you love</h3>
+    </div>
     <!-- <h3>Find books you love</h3> -->
-    <%= render 'shared/search' %>
-    <%= render 'shared/search_results' %>
+    <div class="position-search">
+      <%= render 'shared/search' %>
+      <%= render 'shared/search_results' %>
+    </div>
   </div>
 </div>
 
