@@ -1,26 +1,42 @@
-<div class="row row justify-content-center ">
-  <div class="profile col-sm-12 col-md-6 col-lg-8">
+<div class="profile-page">
     <div class="profile-welcame">
           <h2>Hello, <%=@profile.first_name %>!</h2>
           <h3> <%#=@profile.photo %></h3>
     </div>
-    <h4>Your borrowing history:</h4>
-    <ul>
-      <% @user.transactions.each do |transaction| %>
-      <li>Book: <%= transaction.book.name %>, Borrowing Date: <%= transaction.borrow_date %>, Return Date: <%= transaction.return_date %>.
-      </li>
-      <% end %>
-    </ul>
 
-    <h4>Your lending history:</h4>
-    <p>Please auhtorize or decline your pending requests.</p>
-    <ul>
+      <h4>Your borrowing history:</h4>
+
+
+          <div class="row">
+          <% @user.transactions.each do |transaction| %>
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="profile-card-product">
+                  <img src= "<%= transaction.book.photo %>" />
+                  <div class="profile-card-product-infos">
+                    Book: <%= transaction.book.name %>, Borrowing Date: <%= transaction.borrow_date %>, Return Date: <%= transaction.return_date %>
+                  </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+
+      <h4>Your lending history:</h4>
+        <p>Please auhtorize or decline your pending requests.</p>
+
+   <div class="row">
       <% @user.books.each do |book| %>
         <% book.transactions.each do |book_transactions| %>
-          <li> Book: <%= book_transactions.book.name %>, Requested Borrow Date: <%= book_transactions.borrow_date %>, Requested Return Date: <%= book_transactions.return_date %>.</li>
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="profile-card-product">
+              <img src= "<%= book_transactions.book.photo %>" />
+              <div class="profile-card-product-infos">
+                Book: <%= book_transactions.book.name %>, Requested Borrow Date: <%= book_transactions.borrow_date %>, Requested Return Date: <%= book_transactions.return_date %>
+              </div>
+            </div>
+          </div>
         <% end %>
       <% end %>
-    </ul>
-
+    </div>
   </div>
 </div>
