@@ -60,11 +60,26 @@
 }
 
 #trash {
-  margin-bottom: 5px;
-  padding: 5px;
+ margin-rigth: 3px;
+  padding: 8px;
+  padding-rigth: 5px;
+  font-size: 20px;
+
 }
 
 #pencil {
-  margin-bottom: 5px;
-  padding: 5px;
+  margin-left: 3px;
+  padding: 8px;
+  font-size: 20px;
+
 }
+
+.icons a {
+  color: #4d4d4d;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+

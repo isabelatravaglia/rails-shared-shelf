@@ -5,20 +5,11 @@
 
 <div class="show-card">
   <div class="content-backgroud">
-    <img src="<%= @book.photo %>" />
-    <div class="show-card-infos">
-      <h2><%=@book.name%></h2>
-      <h3><%=@book.author%></h3>
-      <p>Edition: <%=@book.edition%></p>
-      <p>Language: <%=@book.language%></p>
-      <p>Genre: <%=@book.genre%></p>
-      <p>Pages: <%=@book.number_of_pages%></p>
-      <p>Sinopse: <%=@book.description%></p>
-<br>
-      <%#= link_to "Borrow this book!", book_transactions_path(@book), method: :post, class: 'btn btn-dark rounded-pill' %>
-      <%= render '/transactions/form'%>
 
-      <div class='d-flex justify-content-end'>
+    <img src="<%= @book.photo %>" />
+
+    <div class="show-card-infos">
+       <div class='icons d-flex justify-content-end'>
 
         <div id='trash'>
           <% if policy(@book).destroy? %>
@@ -37,6 +28,21 @@
         </div>
 
       </div>
+
+
+
+      <h2><%=@book.name%></h2>
+      <h3><%=@book.author%></h3>
+      <p>Edition: <%=@book.edition%></p>
+      <p>Language: <%=@book.language%></p>
+      <p>Genre: <%=@book.genre%></p>
+      <p>Pages: <%=@book.number_of_pages%></p>
+      <p>Sinopse: <%=@book.description%></p>
+<br>
+      <%#= link_to "Borrow this book!", book_transactions_path(@book), method: :post, class: 'btn btn-dark rounded-pill' %>
+      <%= render '/transactions/form'%>
+
+
     </div>
   </div>
   <div class="button-back">
