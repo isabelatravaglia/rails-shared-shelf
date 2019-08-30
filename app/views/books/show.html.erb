@@ -18,6 +18,25 @@
       <%#= link_to "Borrow this book!", book_transactions_path(@book), method: :post, class: 'btn btn-dark rounded-pill' %>
       <%= render '/transactions/form'%>
 
+      <div class='d-flex justify-content-end'>
+
+        <div id='trash'>
+          <% if policy(@book).destroy? %>
+            <%= link_to book_path(@book), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div id='pencil'>
+          <% if policy(@book).edit? %>
+            <%= link_to edit_book_path(@book) do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
     </div>
   </div>
   <div class="button-back">

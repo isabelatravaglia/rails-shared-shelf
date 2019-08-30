@@ -49,7 +49,7 @@
 }
 
 .content-backgroud {
-   background-color: rgba(230, 230, 230, 0.6);
+  background-color: rgba(230, 230, 230, 0.6);
   border-radius: 0 6px 6px 0;
   display: flex;
 }
@@ -57,4 +57,14 @@
 .button-back {
   position: absolute;
   bottom: 50px;
+}
+
+#trash {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+#pencil {
+  margin-bottom: 5px;
+  padding: 5px;
 }
