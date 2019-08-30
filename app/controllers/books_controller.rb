@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     if params[:query].present?
       @results = policy_scope(Book).order(:created_at).search_by_book_feature(params[:query])
     else
-      @results = policy_scope(Book).order(:created_at)
+      @results = policy_scope(Book).order(created_at: :desc)
     end
   end
 
