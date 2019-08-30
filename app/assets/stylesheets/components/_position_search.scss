@@ -6,11 +6,14 @@
 }
 
 .home-search-form {
+  form{
+    width:100%;
+  }
 
-  width: 500px;
-  margin-left: 15px;
+    width: 50%;
+    margin-left: 25%;
   #query {
-    width: 400px;
+    width: 85%;
   }
 
 }
