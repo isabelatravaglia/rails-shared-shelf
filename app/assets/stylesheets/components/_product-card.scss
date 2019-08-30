@@ -1,6 +1,7 @@
 .card-product {
+  position: relative;
   overflow: hidden;
-  height: 120px;
+  height: 190px;
   background: #cccccc;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -29,20 +30,21 @@
 }
 
 .card-product p {
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 2px;
   margin-left: 15px;
   color: #4d4d4d;
 }
 
 .card-product .card-product-infos {
   padding-left: 16px;
-  padding-top: 20px;
+  // padding-top: 10px;
   padding-bottom: 20px;
   padding-right: 20px;
+  margin-top: 10px;
 }
 
 .index-page {
@@ -68,6 +70,20 @@ margin-bottom: 30px;
 .index-page h6 {
   margin-left: 15px;
   padding-top: 15px;
+}
+
+.index-page h5 {
+  margin-left: 15px;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #4d4d4d;
+}
+
+.icon {
+  color: #4d4d4d;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 

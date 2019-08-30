@@ -3,7 +3,7 @@
     <%= render 'shared/search' %>
 
       <div class="btn-add">
-        <%= link_to "Add a book", new_book_path, class: 'btn btn-outline-secondary rounded-pill' %>
+        <%= link_to "Add a book", new_book_path, class: 'btn btn-secondary rounded-pill' %>
       </div>
   </div>
 
@@ -21,26 +21,30 @@
         <%= link_to book_path(result), method: :get, :action => 'go' do %>
           <div class="card-product">
             <img src= "<%= result.photo %>" />
+
             <div class="card-product-infos">
-              <h2><%=result.name%>, <%=result.author%></h2>
+              <h5><%=result.name%>, <%=result.author%></h5>
               <p><%=result.description%></p>
               <p><%=result.language%></p>
               <p>Edition: <%=result.edition%></p>
               <p><%=result.genre%></p>
-              <% if policy(result).destroy? %>
-                 <%= link_to "Delete", book_path(result), method: :delete, class: 'btn btn-outline-secondary rounded-pill' %>
-              <% end %>
+            </div>
+
+            <div class='icon d-flex justify-content-end'>
               <% if policy(result).edit? %>
-                <%= link_to "Edit", edit_book_path(result), class: 'btn btn-outline-secondary rounded-pill' %>
+                <i class="fas fa-user"></i>
               <% end %>
             </div>
+
+
+
           </div>
           <% end %>
       </div>
-      <% end %>
+    <% end %>
     </div>
 
-    <% end %>
+  <% end %>
 </div>
 
 

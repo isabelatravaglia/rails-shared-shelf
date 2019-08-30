@@ -49,7 +49,7 @@
 }
 
 .content-backgroud {
-   background-color: rgba(230, 230, 230, 0.6);
+  background-color: rgba(230, 230, 230, 0.6);
   border-radius: 0 6px 6px 0;
   display: flex;
 }
@@ -58,3 +58,28 @@
   position: absolute;
   bottom: 50px;
 }
+
+#trash {
+ margin-rigth: 3px;
+  padding: 8px;
+  padding-rigth: 5px;
+  font-size: 20px;
+
+}
+
+#pencil {
+  margin-left: 3px;
+  padding: 8px;
+  font-size: 20px;
+
+}
+
+.icons a {
+  color: #4d4d4d;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+
