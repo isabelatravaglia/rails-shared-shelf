@@ -7,7 +7,16 @@
     </div>
     <!-- <h3>Find books you love</h3> -->
     <div class="position-search">
-      <%= render 'shared/search' %>
+      <div class="home-search-form  form-inline">
+        <%= form_tag books_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a book"
+           %>
+            <%= submit_tag "Search", class: "btn-search" %>
+    <% end %>
+  </div>
       <%= render 'shared/search_results' %>
     </div>
   </div>
