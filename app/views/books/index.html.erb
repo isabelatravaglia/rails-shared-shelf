@@ -21,21 +21,30 @@
         <%= link_to book_path(result), method: :get, :action => 'go' do %>
           <div class="card-product">
             <img src= "<%= result.photo %>" />
+
             <div class="card-product-infos">
               <h5><%=result.name%>, <%=result.author%></h5>
               <p><%=result.description%></p>
               <p><%=result.language%></p>
               <p>Edition: <%=result.edition%></p>
               <p><%=result.genre%></p>
-
             </div>
+
+            <div class='icon d-flex justify-content-end'>
+              <% if policy(result).edit? %>
+                <i class="fas fa-user"></i>
+              <% end %>
+            </div>
+
+
+
           </div>
           <% end %>
       </div>
-      <% end %>
+    <% end %>
     </div>
 
-    <% end %>
+  <% end %>
 </div>
 
 
