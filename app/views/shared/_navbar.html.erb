@@ -16,7 +16,8 @@
           <%= "" %>
         </li>
         <li class="nav-item">
-          <%= link_to "", "#", class: "nav-link" %>
+          <%#= link_to "", "#", class: "nav-link" %>
+          <%= link_to "#{current_user.email}", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://images.unsplash.com/photo-1548532928-b34e3be62fc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2067&q=80", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
