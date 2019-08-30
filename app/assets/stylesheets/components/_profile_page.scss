@@ -1,4 +1,68 @@
-.profile {
-// margin-top: 10px;
-// margin-left: 15%;
+.profile-card-product {
+  overflow: hidden;
+  height: 190px;
+  background: #cccccc;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 15px 15px 15px;
+  &:hover {
+    background: #b3b3b3;
+    img {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+    }
+  }
+}
+
+.profile-card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.profile-card-product h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: #4d4d4d;
+}
+
+.profile-card-product p {
+  font-size: 10px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  margin-left: 20px;
+  color: #4d4d4d;
+}
+
+.profile-card-product .profile-card-product-infos {
+  padding-left: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+.profile-page {
+margin: 100px 12%;
+color: #4d4d4d;
+margin-bottom: 30px;
+}
+
+.profile-page h2 {
+  margin-left: 15px;
+}
+
+
+
+.profile-page p {
+  margin-left: 15px;
+  padding-top: 15px;
+}
+
+.profile-page h4 {
+  margin-left: 15px;
+  padding-top: 15px;
 }
